@@ -4,8 +4,7 @@ import Messages from './Messages';
 import Typesend from './Typesend.jsx';  // If TypeSend is in the same folder
 import useConversation from '../../statemanage/useConversation.js';
 import { useAuth } from "../../context/AuthProvider.jsx"; 
-import { CiMenuFries } from 'react-icons/ci';
-import Message from './Message.jsx';
+
 
 function Right() {
   const { selectedConversation, setSelectedConversation } = useConversation();
