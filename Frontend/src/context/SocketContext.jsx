@@ -1,32 +1,25 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useAuth } from "./AuthProvider"; // Ensure this import is correct
+import { useAuth } from "./AuthProvider"; 
 import io from "socket.io-client";
-
 const socketContext = createContext();
-
-// Custom hook to use socket context
 export const useSocketContext = () => {
   return useContext(socketContext);
 };
-
 export const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
-  const { authUser } = useAuth(); // Get the authUser from the context
-  
+  const { authUser } = useAuth();
   useEffect(() => {
     if (authUser) {
       const socket = io("https://messanger-v0g3.onrender.com",{
         query: { userId: authUser.user._id }
       });
       setSocket(socket);
-      console.log("Socket connected:", socket); // Check the socket connection
-  
+      console.log("Socket connected:", socket);
       socket.on("getOnlineUsers", (users) => {
         setOnlineUsers(users);
         console.log("Received online users: ", users);
       });
-  
       return () => {
         socket.close();
       };
@@ -38,8 +31,6 @@ export const SocketProvider = ({ children }) => {
       }
     }
   }, [authUser]);
-  
-
   return (
     <socketContext.Provider value={{ socket, onlineUsers }}>
       {children}

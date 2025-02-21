@@ -6,33 +6,22 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server , {
   cors: {
-    origin: "https://messanger-v0g3.onrender.com", // Your client-side URL
+    origin: "https://messanger-v0g3.onrender.com",
     methods: ["GET", "POST"],
   }
 });
-
-
-// Object to keep track of users and their socket ids
 const users = {};
-
-// Function to get the socket ID for a receiver user
 function getReceiverSocketId(receiverId) {
-  return users[receiverId];  // Return the socket ID for the receiver
+  return users[receiverId]; 
 }
-
 io.on("connection", (socket) => {
   console.log("A new User connected", socket.id);
-
   const userId = socket.handshake.query.userId;
-
   if (userId) {
-    // Add the userId and their socket id to the users object
     users[userId] = socket.id;
     console.log("Users currently connected:", users);
   }
   io.emit("getOnlineUsers", Object.keys(users));
-
-  // Handle socket disconnection
   socket.on("disconnect", () => {
     console.log('Client disconnected, socket id:', socket.id);
 

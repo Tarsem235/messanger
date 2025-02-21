@@ -69,7 +69,7 @@ function Signup() {
     <div className="flex items-center justify-center min-h-screen bg-neutral-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">
         <form onSubmit={handleSubmit}>
-          <h1 className="text-2xl text-blue-600 font-semibold mb-4 text-center">
+          <h1 className="text-2xl  font-semibold mb-4 text-center">
             Create a new Account
           </h1>
           <p className="text-center text-gray-600 mb-4">

@@ -5,27 +5,19 @@ const createTokenAndSaveCookie = require("../jwt/generateToken.js");
 exports.signup = async (req, res) => {
   try {
     const { name, email, password, confirmpassword } = req.body;
-
-    // Check if confirm password matches password
     if (password !== confirmpassword) {
       return res.status(400).json({ message: 'Passwords do not match' });
     }
-
-    // Check if email already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'Email already exists' });
     }
-
-    // Hash the password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
-
     const newUser = new User({
       name,
       email,
       password: hashedPassword,  
     });
-
     await newUser.save();
 if (newUser) {
   createTokenAndSaveCookie(newUser._id , res);
@@ -57,7 +49,7 @@ exports.login = async (req, res) => {
 
         console.log("User found:", user);
 
-        // Ensure `user.password` is defined
+        
         if (!user.password) {
             return res.status(500).json({ message: "User password is missing in database" });
         }

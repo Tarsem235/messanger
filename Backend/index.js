@@ -9,7 +9,6 @@ const messageRoutes = require('./routes/message.route.js');
 const bodyParser = require('body-parser');
 const { app, server, io } = require('./SocketIO/server.js');
 
-// Load environment variables
 dotenv.config();
 
 app.use(express.json());
@@ -17,7 +16,6 @@ app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-// MongoDB connection
 const mongoURL = process.env.MONGODB_URI;
 mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -26,8 +24,6 @@ mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(err => {
     console.error('MongoDB connection error:', err);
   });
-
-// API Routes
 app.use('/api/api', userRoutes);
 app.use('/api/message', messageRoutes);
 
