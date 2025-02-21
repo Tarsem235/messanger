@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Chatuser from './Chatuser';
 import Messages from './Messages';
-import Typesend from './TypeSend';
+import TypeSend from './TypeSend.jsx';  // If TypeSend is in the same folder
 import useConversation from '../../statemanage/useConversation.js';
 import { useAuth } from "../../context/AuthProvider.jsx"; 
 import { CiMenuFries } from 'react-icons/ci';
@@ -32,7 +32,7 @@ function Right() {
              <Messages />
 
           </div>
-          <Typesend />
+          <TypeSend />
         </div>
        )} 
     </div>
