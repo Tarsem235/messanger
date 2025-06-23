@@ -17,7 +17,8 @@ function User({ user }) {
   // };
 
   const handleUser = () => {
-    setSelectedConversation(user); // Set the selected user as the active conversation
+    setSelectedConversation(user); 
+    // Set the selected user as the active conversation
     // setShow(true); // Ensure chat components are shown when a user is selected
   };
 

@@ -12,7 +12,7 @@ function Left() {
         }`}
       >
         <h1 className="font-bold px-5  italic text-2xl sm:text-3xl mt-6 md:px-5 text-green-500">
-          Messenger
+          Messenger 
         </h1>
         <Search />
         <Users />

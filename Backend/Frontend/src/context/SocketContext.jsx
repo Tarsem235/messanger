@@ -10,8 +10,9 @@ export const SocketProvider = ({ children }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const { authUser } = useAuth();
   useEffect(() => {
+    
     if (authUser) {
-      const socket = io("https://messanger-v0g3.onrender.com",{
+      const socket = io("localhost:5002",{
         query: { userId: authUser.user._id }
       });
       setSocket(socket);

@@ -1,12 +1,12 @@
 const {Server}= require('socket.io')
 const http = require('http');
 const express = require('express');
-
+const cors = require("cors");
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server , {
   cors: {
-    origin: "https://messanger-v0g3.onrender.com",
+    origin: "localhost:5002",
     methods: ["GET", "POST"],
   }
 });
