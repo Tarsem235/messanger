@@ -8,7 +8,7 @@ function Left() {
   return (
     <>
       <div
-        className={`fixed inset-0 md:ml-12 md:w-1/4 bg-gradient-to-b from-gray-900 via-black to-gray-800 text-white font-semibold border-r border-gray-700 shadow-xl h-screen transition-transform duration-300 z-30 ${
+        className={`fixed inset-0 md:ml-12 md:w-1/4 bg-white text-white font-semibold border-r border-gray-700 shadow-xl h-screen transition-transform duration-300 z-30 ${
           selectedConversation ? "transform -translate-x-full md:translate-x-0" : ""
         }`}
       >
