@@ -24,7 +24,7 @@ function User({ user }) {
 
   return (
     <div
-      className={`hover:bg-gradient-to-r from-pink-700 to purple-700 duration-300 ${isSelected ? "bg-slate-600" : ""}`}
+      className={`hover:bg-gradient-to-r from-pink-700 to purple-700 duration-300 ${isSelected ? "bg-slate-300" : ""}`}
       onClick={handleUser} // Handle user selection
     >
       {/* Show chat components only if show is true and a selected conversation exists */}
@@ -52,8 +52,8 @@ function User({ user }) {
           </div>
 
           <div>
-            <p className="text-white font-bold text-1 sm:text-base">{user.name}</p>
-            <p className="text-gray-100 text-1 mt-[-2px] sm:text-1">{user.email}</p>
+            <p className="text-black font-bold text-1 sm:text-base">{user.name}</p>
+            <p className="text-gray-300 text-1 mt-[-2px] sm:text-1">{user.email}</p>
           </div>
         </div>
     </div>
