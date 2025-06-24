@@ -33,19 +33,12 @@ export default Right;
 const NoChat = () => {
   const { authUser } = useAuth();
   console.log(authUser);
-
   return (
-    <div className="lg-block items-center justify-center h-full">
-      <div className="text-center">
-        <img
-          className="h-20 mx-auto"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UG5LYXDx2X78rDkRhREP51_FuSpyJbNoWA&s"
-          alt="No chat"
-        />
-        <h1 className="font-semibold text-xl mt-4">
-          Select a chat to start messaging
-        </h1>
+    <div className='flex items-center justify-center h-full  lg-block'>
+      <div className='text-center absolute top-50 right-90 '>
+        <img className='h-20 mx-auto' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UG5LYXDx2X78rDkRhREP51_FuSpyJbNoWA&s' alt="No chat" />
+        <h1 className='font-semibold text-xl '>Select a chat to start messaging</h1>
       </div>
     </div>
   );
-};
+}

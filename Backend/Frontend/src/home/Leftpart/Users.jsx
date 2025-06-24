@@ -10,9 +10,6 @@ function Users() {
 
   return (
     <div>
-      <h1 className=" mt-[-13px] sm:mt-5 lg:mt-2 h-8 px-7 py-1 text-black font-semibold bg-slate-300 rounded-md">
-        Messages
-      </h1>
       <div
         className="py-1 flex-1 overflow-y-auto"
         style={{ maxHeight: "calc(88vh - 10vh)" }}

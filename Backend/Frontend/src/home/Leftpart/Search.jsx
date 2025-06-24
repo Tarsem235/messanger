@@ -29,6 +29,9 @@ function Search() {
 
   return (
     <div className="h-[12vh] sm:h-[10vh] lg:h-[10vh]">
+      <h1 className=" mt-[-13px] ml-[10px] sm:mt-5 lg:mt-2 h-8 px-7 py-1 text-black font-semibold ">
+        Messages
+      </h1>
       <div className="ml-3 py-4">
         <form onSubmit={handleSubmit}>
           <div className="flex space-x-3">
