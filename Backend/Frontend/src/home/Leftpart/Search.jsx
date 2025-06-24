@@ -35,7 +35,7 @@ function Search() {
       <div className="ml-3 py-4">
         <form onSubmit={handleSubmit}>
           <div className="flex space-x-3">
-            <label className="border-[2px] border-gray-200 border-b-green-500 bg-white lg:rounded-xl rounded-full p-1 flex items-center h-10 gap-2 w-screen">
+            <label className="border-[2px] border-gray-200 border-b-green-500 bg-gray-100 lg:rounded-sm rounded-full p-1 flex items-center h-10 gap-2 w-screen">
               <input
                 type="text"
                 className="grow outline-none bg-transparent"

@@ -37,7 +37,7 @@ function Logout() {
         {/* Avatar Image */}
         <div className="relative">
           <img
-            className="absolute top-4 left-1.5  w-10 h-10  object-cover rounded-full cursor-pointer"
+            className="absolute  left-1.5  w-10 h-10  object-cover rounded-full cursor-pointer"
             src="https://e7.pngegg.com/pngimages/81/570/png-clipart-profile-logo-computer-icons-user-user-blue-heroes-thumbnail.png"
             alt="User Avatar"
             onClick={showDetails}
