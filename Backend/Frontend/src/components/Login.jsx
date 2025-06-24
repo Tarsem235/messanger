@@ -54,7 +54,7 @@ function Login() {
         <form onSubmit={handleSubmit}>
           <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
             <img className='w-20 ml-33 md:hidden' src='https://cdn-icons-png.flaticon.com/512/5356/5356190.png'/>
-            Welcome to Messanger!
+            Welcome to Messanger
           </h1>
 
           {/* Email */}
