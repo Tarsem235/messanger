@@ -29,7 +29,7 @@ function Search() {
 
   return (
     <div className="h-[12vh] sm:h-[10vh] lg:h-[10vh]">
-      <div className="ml-3 py-7">
+      <div className="ml-3 py-5">
         <form onSubmit={handleSubmit}>
           <div className="flex space-x-3">
             <label className="border-[2px] border-gray-200 border-b-green-500 bg-white lg:rounded-xl rounded-full p-1 flex items-center h-10 gap-2 w-screen">
