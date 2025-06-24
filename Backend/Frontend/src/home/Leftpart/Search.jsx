@@ -28,14 +28,14 @@ function Search() {
   };
 
   return (
-    <div className="h-[12vh] sm:h-[10vh] lg:h-[10vh]">
-      <h1 className=" mt-[-13px] ml-[10px] sm:mt-5 lg:mt-2 h-8 px-7 py-1 text-black font-semibold ">
+    <div className="h-[12vh] sm:h-[10vh] lg:h-[10vh] pb-[20px]">
+      <h1 className=" mt-[-13px] ml-[1cm] sm:mt-5 lg:mt-2 h-8 px-7 py-1 font-xl text-black border[1px] border-b-black font-semibold ">
         Messages
       </h1>
       <div className="ml-3 py-4">
         <form onSubmit={handleSubmit}>
           <div className="flex space-x-3">
-            <label className="border-[2px] border-gray-200 border-b-green-500 bg-gray-100 lg:rounded-sm rounded-full p-1 flex items-center h-10 gap-2 w-screen">
+            <label className="border-[1px] border-gray-200 border-b-green-500 bg-gray-100 lg:rounded-sm rounded-full p-1 flex items-center h-9 gap-2 w-screen">
               <input
                 type="text"
                 className="grow outline-none bg-transparent"
