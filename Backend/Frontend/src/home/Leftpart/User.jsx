@@ -52,8 +52,8 @@ function User({ user }) {
           </div>
 
           <div>
-            <p className="text-black text-1 sm:text-base">{user.name}</p>
-            <p className="text-gray-500 text-1 mt-[-2px] sm:text-1">{user.email}</p>
+            <p className="text-white font-bold text-1 sm:text-base">{user.name}</p>
+            <p className="text-gray-100 text-1 mt-[-2px] sm:text-1">{user.email}</p>
           </div>
         </div>
     </div>
