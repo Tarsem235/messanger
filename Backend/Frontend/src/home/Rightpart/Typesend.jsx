@@ -24,7 +24,7 @@ function Typesend() {
             placeholder="   Type a message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full py-2 px-4 rounded-full lg:rounded-lg bg-gray-200 text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full py-2 px-4 rounded-full  bg-white text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
         <button

@@ -35,7 +35,7 @@ const NoChat = () => {
   console.log(authUser);
 
   return (
-    <div className="hidden  items-center justify-center h-full">
+    <div className="lg-block items-center justify-center h-full">
       <div className="text-center">
         <img
           className="h-20 mx-auto"
