@@ -7,13 +7,10 @@ function Left() {
   return (
     <>
       <div
-        className={`fixed inset-0 md:ml-12 md:w-1/4 bg-black text-black border border-slate-300 h-screen transition-transform duration-300 ${
+        className={`fixed inset-0 md:ml-12 md:w-1/4 bg-black text-white font-bold  border border-slate-300 h-screen transition-transform duration-300 ${
           selectedConversation ? "transform -translate-x-full md:translate-x-0" : ""
         }`}
       >
-        <h1 className="font-bold px-5  italic text-2xl sm:text-3xl mt-6 md:px-5 text-green-500">
-          Messenger 
-        </h1>
         <Search />
         <Users />
         <div className="flex-1 overflow-y-auto">
