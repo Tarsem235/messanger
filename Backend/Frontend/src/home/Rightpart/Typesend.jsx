@@ -18,7 +18,7 @@ function Typesend() {
   return (
     <form onSubmit={handleSubmit} className="fixed bottom-0 right-0 border-[1px] border-white border-t-pink-500 border-l-gray-200 w-full  lg:w-[71.5%] px-4 py-3 bg-white ">
       <div className="flex items-center space-x-3 rounded-full">
-         <div className="flex w-2xl items-center rounded-full bg-white px-4 py-2 shadow-sm ">
+         <div className="flex w-full items-center rounded-full bg-white px-4 py-2 shadow-sm ">
         <input
           type="text"
           placeholder="Message..."

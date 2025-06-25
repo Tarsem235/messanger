@@ -35,7 +35,7 @@ const NoChat = () => {
 
   return (
     <div className="hidden lg:flex h-screen w-full bg-white ">
-  <div className="m-auto flex flex-col items-center mr-[30px]">
+  <div className="m-auto flex flex-col items-center mr-[150px]">
     <img
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UG5LYXDx2X78rDkRhREP51_FuSpyJbNoWA&s"
       alt="No chat"
