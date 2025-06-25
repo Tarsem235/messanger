@@ -34,19 +34,22 @@ const NoChat = () => {
   const { authUser } = useAuth();
 
   return (
-    <div className="hidden lg:flex flex-col items-center justify-center h-screen w-full bg-white mt-[25px] ml-[40px] ">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UG5LYXDx2X78rDkRhREP51_FuSpyJbNoWA&s"
-        alt="No chat"
-        className="h-40  select-none opacity-90"
-      />
-      <h1 className="text-gray-600 text-xl font-medium">
-        Select a chat to start messaging
-      </h1>
-      <p className="text-sm text-gray-500 mt-2">
-        Chat with your contacts in real-time
-      </p>
-    </div>
+    <div className="hidden lg:flex h-screen w-full bg-white mt-[25px]">
+  <div className="m-auto flex flex-col items-center">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UG5LYXDx2X78rDkRhREP51_FuSpyJbNoWA&s"
+      alt="No chat"
+      className="h-40 select-none opacity-90"
+    />
+    <h1 className="text-gray-600 text-xl font-medium">
+      Select a chat to start messaging
+    </h1>
+    <p className="text-sm text-gray-500 mt-2">
+      Chat with your contacts in real-time
+    </p>
+  </div>
+</div>
+
   );
 };
 
