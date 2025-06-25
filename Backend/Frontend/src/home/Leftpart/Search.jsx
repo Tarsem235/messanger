@@ -13,43 +13,36 @@ function Search() {
     e.preventDefault();
     if (!search) return;
 
-    // Search for the user based on the name
     const conversation = allUsers.find((user) =>
       user.name?.toLowerCase().includes(search.toLowerCase())
     );
 
-    // If conversation is found, set it and clear the search
     if (conversation) {
       setSelectedConversation(conversation);
-      setSearch(""); // Clear the search
+      setSearch("");
     } else {
       toast.error("User not found");
     }
   };
 
   return (
-    <div className="h-[12vh] sm:h-[10vh] lg:h-[10vh] pb-[20px]">
-      <h1 className=" mt-[-13px] ml-[1cm] sm:mt-5 lg:mt-2 h-8 px-7 py-1 font-xl text-black border[1px] border-b-black font-semibold ">
-        Messages
-      </h1>
-      <div className="ml-3 py-4">
-        <form onSubmit={handleSubmit}>
-          <div className="flex space-x-3">
-            <label className="border-[1px] border-gray-200 border-b-green-500 bg-gray-100 lg:rounded-sm rounded-full p-1 flex items-center h-9 gap-2 w-screen">
-              <input
-                type="text"
-                className="grow outline-none bg-transparent"
-                placeholder="   Search or start a new chat"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)} // Update search state on input change
-              />
-            </label>
-            <button type="submit">
-              <FaSearch className="text-4xl p-2 hover:bg-gray-600 rounded-full duration-300 ml-[-1.2cm] h-8 w-8" />
-            </button>
-          </div>
-        </form>
-      </div>
+    <div className="px-4 pt-4">
+      {/* Header like Instagram "Messages" */}
+      <h2 className="text-xl font-semibold text-gray-800 mb-3 px-1">Messages</h2>
+
+      {/* Search bar */}
+      <form onSubmit={handleSubmit}>
+        <div className="relative">
+          <FaSearch className="absolute top-2.5 left-3 text-gray-500" />
+          <input
+            type="text"
+            className="w-full pl-10 pr-4 py-2 rounded-full bg-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all"
+            placeholder="Search or start a new chat"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+      </form>
     </div>
   );
 }
