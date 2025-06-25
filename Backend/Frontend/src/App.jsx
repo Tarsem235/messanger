@@ -17,7 +17,7 @@ function AppRoutes() {
         element={
           authUser ? (
             <div className="flex ">
-              {/* <Logout /> */}
+              <Logout />
               <Left />
               <Right />
             </div>

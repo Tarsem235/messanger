@@ -30,15 +30,26 @@ function Right() {
 
 export default Right;
 
+import React from "react";
+import { useAuth } from "../../context/AuthProvider.jsx";
+
 const NoChat = () => {
   const { authUser } = useAuth();
-  console.log(authUser);
+
   return (
-    <div className='flex items-center justify-center h-full  '>
-      <div className='text-center absolute top-50 right-90 '>
-        <img className='h-20 mx-auto hiddne lg-block' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UG5LYXDx2X78rDkRhREP51_FuSpyJbNoWA&s' alt="No chat" />
-        <h1 className='font-semibold text-xl sm-text-white lg-text-black'>Select a chat to start messaging</h1>
-      </div>
+    <div className="hidden lg:flex flex-col items-center justify-center h-full w-full bg-gray-50">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UG5LYXDx2X78rDkRhREP51_FuSpyJbNoWA&s"
+        alt="No chat"
+        className="h-40 mb-6 select-none opacity-90"
+      />
+      <h1 className="text-gray-600 text-xl font-medium">
+        Select a chat to start messaging
+      </h1>
+      <p className="text-sm text-gray-500 mt-2">
+        Chat with your contacts in real-time
+      </p>
     </div>
   );
-}
+};
+
