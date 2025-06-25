@@ -4,75 +4,67 @@ import useConversation from "../../statemanage/useConversation.js";
 import axios from "axios";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
-import { useAuth } from "../../context/AuthProvider.jsx"; 
+import { useAuth } from "../../context/AuthProvider.jsx";
+
 function Logout() {
-    const { authUser } = useAuth(); 
-    console.log(authUser)
+  const { authUser } = useAuth();
   const [loading, setLoading] = useState(false);
   const { selectedConversation } = useConversation();
   const [show, setShow] = useState(false);
 
-  const showDetails = () => {
-    setShow((prevState) => !prevState);
-  };
+  const showDetails = () => setShow((prev) => !prev);
 
   const handleLogout = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("/api/api/logout");
+      await axios.post("/api/api/logout");
       localStorage.removeItem("messanger");
       Cookies.remove("jwt");
       setLoading(false);
       toast.success("Logged out successfully");
       window.location.reload();
     } catch (error) {
-      console.log("Error in Logout", error);
+      console.error("Error in Logout", error);
       toast.error("Error in logging out");
     }
   };
 
   return (
     <>
-      <div className="absolute top-0 left-0 w-[3.5%] md:h-screen bg:white  md:bg-slate-100 text-black flex flex-col justify-start items-center pt-4 lg:block z-50">
-        {/* Avatar Image */}
-        <div className="relative">
-          <img
-            className="absolute  left-1.5  w-10 h-10  object-cover rounded-full cursor-pointer"
-            src="https://e7.pngegg.com/pngimages/81/570/png-clipart-profile-logo-computer-icons-user-user-blue-heroes-thumbnail.png"
-            alt="User Avatar"
-            onClick={showDetails}
-          />
-          {show && (
-            <div className="absolute top-30 left-13 bg-white p-2 shadow-2xl border border-gray-200 rounded-md h-[370px] lg:h-[400px]  w-[280px] sm:w-[350px] transform transition-all duration-300 ease-in-out opacity-100 animate-slide-up">
-              <img
-                className="w-30 mt-10 object-cover rounded-full mx-auto justify-end"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81iX4Mo49Z3oCPSx-GtgiMAkdDop2uVmVvw&s"
-                alt="User Avatar"
-              />
-         <h1 className="text-center text-xl lg:text-2xl mt-5" >{`***${authUser.user.name}***`}</h1>
-         <h1 className="text-center text-md lg:text-xl text-gray-300" >{`***${authUser.user.email}***`}</h1>
-         <div className="text-center mt-10">
-  <button 
-    onClick={handleLogout} 
-    className="bg-white border border-gray-300 text-red-500 font-semibold py-2 px-9 rounded-lg shadow-md hover:bg-white transition duration-300 ease-in-out transform hover:scale-105"
-  >
-    Log Out
-  </button>
-</div>
-  
-            </div>
-          )}
-        </div>
-
-        {/* Logout Button */}
-        <button onClick={showDetails} className="mt-10 w-10 absolute top-[-22px] left-90">
-          <img
-            className="block lg:hidden  cursor-pointer"
-            src="https://cdn-icons-png.flaticon.com/128/8212/8212730.png"
-            alt="Logout"
-          />
-        </button>
+      {/* Sidebar Avatar */}
+      <div className="absolute top-3 left-3 z-50">
+        <img
+          src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg"
+          alt="User Avatar"
+          onClick={showDetails}
+          className="w-10 h-10 rounded-full object-cover border-2 border-gray-200 cursor-pointer hover:scale-105 transition-transform"
+        />
       </div>
+
+      {/* User Info Popup */}
+      {show && (
+        <div className="absolute top-16 left-4 bg-white shadow-lg rounded-2xl border border-gray-200 w-72 p-5 z-50 animate-fade-in">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81iX4Mo49Z3oCPSx-GtgiMAkdDop2uVmVvw&s"
+            alt="User"
+            className="w-20 h-20 rounded-full object-cover mx-auto mb-4"
+          />
+          <h1 className="text-center text-lg font-semibold text-gray-800">
+            {authUser?.user?.name}
+          </h1>
+          <p className="text-center text-sm text-gray-500 mb-6">
+            {authUser?.user?.email}
+          </p>
+          <div className="text-center">
+            <button
+              onClick={handleLogout}
+              className="text-red-500 font-semibold border border-gray-300 px-5 py-2 rounded-lg hover:scale-105 transition-transform"
+            >
+              {loading ? "Logging out..." : "Log Out"}
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }

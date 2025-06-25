@@ -9,7 +9,7 @@ import { Toaster } from "react-hot-toast";
 import Logout from "./home/left1/Logout";
 function AppRoutes() {
   const { authUser } = useAuth(); // Only get authUser since you're not setting it here
-console.log(authUser)
+  console.log(authUser)
   return (
     <Routes>
       <Route
@@ -17,9 +17,7 @@ console.log(authUser)
         element={
           authUser ? (
             <div className="flex ">
-              {/* <div className=""> */}
-              <Logout />
-              {/* </div> */}
+              {/* <Logout /> */}
               <Left />
               <Right />
             </div>
