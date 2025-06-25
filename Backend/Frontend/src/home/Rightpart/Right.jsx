@@ -34,7 +34,7 @@ const NoChat = () => {
   const { authUser } = useAuth();
 
   return (
-    <div className="hidden lg:flex flex-col items-center justify-center h-screen w-full bg-white mt-[25px] mr-[-40px] ">
+    <div className="hidden lg:flex flex-col items-center justify-center h-screen w-full bg-white mt-[25px] ml-[40px] ">
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UG5LYXDx2X78rDkRhREP51_FuSpyJbNoWA&s"
         alt="No chat"
