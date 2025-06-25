@@ -34,11 +34,11 @@ const NoChat = () => {
   const { authUser } = useAuth();
 
   return (
-    <div className="hidden lg:flex flex-col items-center justify-center h-full w-full bg-gray-50">
+    <div className="hidden lg:flex flex-col items-center justify-center h-screen w-full bg-white mt-[40px] mr-[-30px]">
       <img
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UG5LYXDx2X78rDkRhREP51_FuSpyJbNoWA&s"
         alt="No chat"
-        className="h-40 mb-6 select-none opacity-90"
+        className="h-40 mb-3 select-none opacity-90"
       />
       <h1 className="text-gray-600 text-xl font-medium">
         Select a chat to start messaging
