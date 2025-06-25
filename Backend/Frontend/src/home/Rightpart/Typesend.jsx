@@ -24,7 +24,7 @@ function Typesend() {
           placeholder="Message..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className= " w-lg flex-1 bg-transparent outline-none text-sm text-gray-800 placeholder-gray-500"
+          className= " w-xl flex-1 bg-transparent outline-none text-sm text-gray-800 placeholder-gray-500"
         />
         </div>
           <button
