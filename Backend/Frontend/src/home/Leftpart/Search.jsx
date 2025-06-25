@@ -28,7 +28,7 @@ function Search() {
   return (
     <div className="px-4 pt-4">
       {/* Header like Instagram "Messages" */}
-      <h2 className="text-xl font-semibold text-gray-800 mb-3 px-1">Messages</h2>
+      <h2 className="text-xl font-semibold text-gray-800 mb-3 px-1 ">Messages</h2>
 
       {/* Search bar */}
       <form onSubmit={handleSubmit}>

@@ -32,7 +32,7 @@ function Logout() {
   return (
     <>
       {/* Sidebar Avatar */}
-      <div className="absolute top-3 left-3 z-50 hiddne md-block">
+      <div className="absolute top-3 left-1 z-50 sm-hidden md-block">
         <img
           src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg"
           alt="User Avatar"
