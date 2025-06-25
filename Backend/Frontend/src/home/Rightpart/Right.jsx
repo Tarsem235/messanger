@@ -30,9 +30,6 @@ function Right() {
 
 export default Right;
 
-import React from "react";
-import { useAuth } from "../../context/AuthProvider.jsx";
-
 const NoChat = () => {
   const { authUser } = useAuth();
 
