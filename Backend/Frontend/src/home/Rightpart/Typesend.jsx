@@ -1,4 +1,3 @@
-// Typesend.js
 import React, { useState } from "react";
 import { IoSend } from "react-icons/io5";
 import useSendMessage from "../../context/useSendMessage.js";
@@ -16,21 +15,22 @@ function Typesend() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="fixed bottom-0 right-0 border-[1px] border-white border-t-pink-500 border-l-gray-200 w-full  lg:w-[71.5%] px-4 py-3 bg-white ">
-      <div className="flex items-center space-x-3 rounded-full">
-         <div className="flex items-center rounded-full bg-white px-4 py-2 shadow-sm ">
+    <form
+      onSubmit={handleSubmit}
+      className="fixed bottom-0 right-0 w-full px-2 sm:px-4 py-2 bg-white border-t border-gray-200 z-50"
+    >
+      <div className="flex items-center justify-between max-w-4xl mx-auto bg-gray-100 rounded-full px-4 py-2 shadow-sm">
         <input
           type="text"
           placeholder="Message..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className= " w-xl flex-1 bg-transparent outline-none text-sm text-gray-800 placeholder-gray-500"
+          className="flex-1 bg-transparent outline-none text-sm text-gray-800 placeholder-gray-500 px-2"
         />
-        </div>
-          <button
+        <button
           type="submit"
           disabled={loading || !message.trim()}
-          className="ml-2 text-pink-500 hover:text-pink-600 transition-colors duration-200"
+          className="text-pink-500 hover:text-pink-600 transition-colors duration-200 disabled:opacity-50"
         >
           <IoSend className="text-2xl" />
         </button>
