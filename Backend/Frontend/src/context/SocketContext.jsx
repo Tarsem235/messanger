@@ -16,7 +16,7 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (authUser) {
       // ✅ Use a different variable name
-      const newSocket = io("https://messanger-v0g3.onrender.com", {
+      const newSocket = io("https://messanger-1-xf6a.onrender.com/", {
         query: { userId: authUser.user._id }
       });
 

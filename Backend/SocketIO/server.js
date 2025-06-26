@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server , {
   cors: {
-    origin: "https://messanger-v0g3.onrender.com",
+    origin: "https://messanger-1-xf6a.onrender.com/",
     methods: ["GET", "POST"],
   }
 });
