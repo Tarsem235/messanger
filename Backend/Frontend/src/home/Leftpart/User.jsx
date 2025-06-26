@@ -26,13 +26,11 @@ function User({ user }) {
               alt="User"
               className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border"
             />
-       <span
-              className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${
-                getOnlineUsersStatus(selectedConversation._id) === "Online"
-                  ? "bg-green-500"
-                  : "bg-gray-400"
-              }`}
-            ></span>
+        <span
+          className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${
+            isOnline ? "bg-green-500" : "bg-gray-400"
+          }`}
+        ></span>
       </div>
 
       {/* Name & Email */}
